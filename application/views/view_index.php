@@ -9,6 +9,7 @@
                     <th>NIP</th>
                     <th>Nama</th>
                     <th>Alamat</th>
+                    <th>Action</th>
                 </tr>
 
                 <?php 
@@ -20,10 +21,33 @@
                     <td><?php echo $p->nip; ?></td>
                     <td><?php echo $p->nama; ?></td>
                     <td><?php echo $p->alamat; ?></td>
+                    <td>
+                        <?php echo anchor('pegawai/edit/'.$p->id, 'Edit'); ?>
+                        <?php echo anchor('pegawai/hapus/'.$p->id, 'Hapus'); ?>
+                    </td>
                 </tr>
 
                 <?php } ?>
             </table>
+
+            <h1>Form</h1>
+            <?php echo validation_errors(); ?>
+            
+            <form action="<?php echo base_url().'pegawai/tambah_aksi'; ?>" method="post">
+            
+                <label>NIP</label><br/>
+                <input type="text" name="nip"><br/>
+
+                <label>Nama</label><br/>
+                <input type="text" name="nama"><br/>
+
+                <label>Alamat</label><br/>
+                <input type="text" name="alamat"><br/>
+
+                <input type="submit" value="Simpan">
+
+            </form>
+
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae aspernatur ea incidunt optio minus fugit et tempore iusto molestiae. Molestias quisquam voluptatem voluptatibus officia neque odio, eos repellendus quibusdam ipsum, molestiae consectetur id. Voluptatibus eveniet illo numquam sit pariatur consequatur in cum quae corrupti est quasi suscipit molestias, adipisci illum provident ea, culpa, doloribus alias velit labore officia natus qui nemo? Cupiditate quas architecto suscipit deleniti iste repudiandae ullam quia, natus dolorem nostrum ab, aperiam qui consequuntur fugit similique. Fugiat maxime nihil quae repellendus incidunt modi, animi ducimus nobis quisquam, aliquid, earum expedita vel libero magni voluptates asperiores et dolor?
             </p>
